@@ -1,0 +1,24 @@
+{
+	"name": "ds_sqltable_destination",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqldb_conn",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"dsp_SheetName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().dsp_SheetName",
+				"type": "Expression"
+			}
+		}
+	}
+}
