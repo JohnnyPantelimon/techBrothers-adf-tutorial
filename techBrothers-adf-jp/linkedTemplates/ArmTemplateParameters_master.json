@@ -8,6 +8,9 @@
 		"ls_source_blob_sa_connectionString": {
 			"value": ""
 		},
+		"ls_git_hub_properties_typeProperties_url": {
+			"value": "https://github.com/JohnnyPantelimon/techBrothers-adf-tutorial/blob/main/"
+		},
 		"containerUri": {
 			"value": ""
 		},

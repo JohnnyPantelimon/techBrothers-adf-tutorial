@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_source_blob_sa'"
 		},
+		"ls_git_hub_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/JohnnyPantelimon/techBrothers-adf-tutorial/blob/main/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -40,6 +44,9 @@
 					},
 					"ls_source_blob_sa_connectionString": {
 						"value": "[parameters('ls_source_blob_sa_connectionString')]"
+					},
+					"ls_git_hub_properties_typeProperties_url": {
+						"value": "[parameters('ls_git_hub_properties_typeProperties_url')]"
 					}
 				}
 			},
