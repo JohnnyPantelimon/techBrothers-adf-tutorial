@@ -4,6 +4,9 @@
 	"parameters": {
 		"factoryName": {
 			"value": "techBrothers-adf-jp"
+		},
+		"ls_source_blob_sa_connectionString": {
+			"value": ""
 		}
 	}
 }
