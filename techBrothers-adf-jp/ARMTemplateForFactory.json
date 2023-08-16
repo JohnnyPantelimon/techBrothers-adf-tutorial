@@ -32,6 +32,9 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
+				"folder": {
+					"name": "Testing"
+				},
 				"annotations": []
 			},
 			"dependsOn": []
@@ -55,6 +58,9 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"folder": {
+					"name": "Testing"
 				},
 				"annotations": []
 			},
