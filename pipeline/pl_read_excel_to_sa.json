@@ -1,0 +1,106 @@
+{
+	"name": "pl_read_excel_to_sa",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEachSheet",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.pl_SheetName",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "Copy data",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "ExcelSource",
+									"storeSettings": {
+										"type": "AzureBlobStorageReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobStorageWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "ds_excel_source",
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_pSheetName": {
+											"value": "@item().SheetName",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_destination_file",
+									"type": "DatasetReference",
+									"parameters": {
+										"dsd_SheetName": {
+											"value": "@item().SheetName",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"pl_SheetName": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"SheetName": "Matches"
+					},
+					{
+						"SheetName": "Players"
+					}
+				]
+			}
+		},
+		"folder": {
+			"name": "Github"
+		},
+		"annotations": []
+	}
+}

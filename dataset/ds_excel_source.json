@@ -1,0 +1,29 @@
+{
+	"name": "ds_excel_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_source_blob_sa",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ds_pSheetName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": {
+				"value": "@dataset().ds_pSheetName",
+				"type": "Expression"
+			},
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "SourceFile.xlsx",
+				"container": "source"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
