@@ -1,0 +1,12 @@
+{
+	"name": "ls_git_hub",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/JohnnyPantelimon/techBrothers-adf-tutorial/blob/83d6de9809bbc99bc5bef376a49eb911144849a3/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
