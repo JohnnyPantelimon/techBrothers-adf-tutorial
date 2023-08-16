@@ -13,7 +13,7 @@
 		},
 		"ls_git_hub_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://github.com/JohnnyPantelimon/techBrothers-adf-tutorial/blob/main/"
+			"defaultValue": "https://github.com/JohnnyPantelimon/techBrothers-adf-tutorial/blob/b623ba32724e8dcbda82232c0493465dfae3fc0b/"
 		},
 		"containerUri": {
 			"type": "string",
