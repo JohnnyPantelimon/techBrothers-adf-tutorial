@@ -7,7 +7,8 @@
 		},
 		"parameters": {
 			"dsd_SheetName": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "asd"
 			}
 		},
 		"annotations": [],
