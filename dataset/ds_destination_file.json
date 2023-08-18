@@ -11,6 +11,9 @@
 				"defaultValue": "asd"
 			}
 		},
+		"folder": {
+			"name": "OldSets"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {

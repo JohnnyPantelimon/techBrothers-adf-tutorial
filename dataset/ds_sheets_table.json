@@ -5,6 +5,9 @@
 			"referenceName": "ls_sqldb_conn",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "OldSets"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [

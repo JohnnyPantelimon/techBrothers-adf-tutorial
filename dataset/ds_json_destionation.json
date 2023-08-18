@@ -5,6 +5,9 @@
 			"referenceName": "ls_source_blob_sa",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "OldSets"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
