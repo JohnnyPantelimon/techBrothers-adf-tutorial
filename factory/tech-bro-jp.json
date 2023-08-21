@@ -1,0 +1,9 @@
+{
+	"name": "tech-bro-jp",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e63a75a4-8575-4a73-83f1-dd9796736661",
+		"tenantId": "e8549c2e-0d2e-4560-9591-3186755fc587"
+	}
+}

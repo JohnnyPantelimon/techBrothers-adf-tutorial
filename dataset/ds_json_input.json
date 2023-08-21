@@ -1,0 +1,72 @@
+{
+	"name": "ds_json_input",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_blob_storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ipl 2008_new.json",
+				"container": "input"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Match ID": {
+					"type": "string"
+				},
+				"Date": {
+					"type": "string"
+				},
+				"Venue": {
+					"type": "string"
+				},
+				"Team1": {
+					"type": "string"
+				},
+				"Team2": {
+					"type": "string"
+				},
+				"Toss winner": {
+					"type": "string"
+				},
+				"Toss decision": {
+					"type": "string"
+				},
+				"Stage": {
+					"type": "string"
+				},
+				"First innings score": {
+					"type": "string"
+				},
+				"First innings wicket": {
+					"type": "string"
+				},
+				"Second innings score": {
+					"type": "string"
+				},
+				"Second innings wicket": {
+					"type": "string"
+				},
+				"Match winner": {
+					"type": "string"
+				},
+				"Won by": {
+					"type": "string"
+				},
+				"Margin": {
+					"type": "string"
+				},
+				"Player of the match": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

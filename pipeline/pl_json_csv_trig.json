@@ -1,0 +1,193 @@
+{
+	"name": "pl_json_csv_trig",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['Match ID']"
+								},
+								"sink": {
+									"name": "Match ID"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Date']"
+								},
+								"sink": {
+									"name": "Date"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Venue']"
+								},
+								"sink": {
+									"name": "Venue"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Team1']"
+								},
+								"sink": {
+									"name": "Team1"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Team2']"
+								},
+								"sink": {
+									"name": "Team2"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Toss Winner']"
+								},
+								"sink": {
+									"name": "Toss Winner"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Toss Decision']"
+								},
+								"sink": {
+									"name": "Toss Decision"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Stage']"
+								},
+								"sink": {
+									"name": "Stage"
+								}
+							},
+							{
+								"source": {
+									"path": "$['First Innings Score']"
+								},
+								"sink": {
+									"name": "First Innings Score"
+								}
+							},
+							{
+								"source": {
+									"path": "$['First Innings Wicket']"
+								},
+								"sink": {
+									"name": "First Innings Wicket"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Second Innings score']"
+								},
+								"sink": {
+									"name": "Second Innings score"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Second Innings Wicket']"
+								},
+								"sink": {
+									"name": "Second Innings Wicket"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Match Winner']"
+								},
+								"sink": {
+									"name": "Match Winner"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Won by']"
+								},
+								"sink": {
+									"name": "Won by"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Margin']"
+								},
+								"sink": {
+									"name": "Margin"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Player of the match']"
+								},
+								"sink": {
+									"name": "Player of the match"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_inval_json",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_csv_inval_json",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-08-21T11:40:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
