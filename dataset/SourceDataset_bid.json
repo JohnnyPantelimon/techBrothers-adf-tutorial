@@ -1,0 +1,17 @@
+{
+	"name": "SourceDataset_bid",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_blob_storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			}
+		}
+	}
+}
