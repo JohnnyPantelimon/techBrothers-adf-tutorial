@@ -1,10 +1,6 @@
 {
 	"name": "ds_destination_file",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_source_blob_sa",
-			"type": "LinkedServiceReference"
-		},
 		"parameters": {
 			"dsd_SheetName": {
 				"type": "string",

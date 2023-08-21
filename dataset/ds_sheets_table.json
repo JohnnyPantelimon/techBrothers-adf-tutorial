@@ -1,10 +1,6 @@
 {
 	"name": "ds_sheets_table",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_sqldb_conn",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "OldSets"
 		},

@@ -1,10 +1,6 @@
 {
 	"name": "ds_excel_source",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_source_blob_sa",
-			"type": "LinkedServiceReference"
-		},
 		"parameters": {
 			"ds_pSheetName": {
 				"type": "string"

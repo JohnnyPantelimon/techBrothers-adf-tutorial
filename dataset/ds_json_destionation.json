@@ -1,10 +1,6 @@
 {
 	"name": "ds_json_destionation",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_source_blob_sa",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "OldSets"
 		},

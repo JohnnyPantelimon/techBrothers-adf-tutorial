@@ -1,10 +1,6 @@
 {
 	"name": "ds_sql_db_conn",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_sqldb_conn",
-			"type": "LinkedServiceReference"
-		},
 		"parameters": {
 			"dsp_tblName": {
 				"type": "string"

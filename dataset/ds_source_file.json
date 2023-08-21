@@ -1,10 +1,6 @@
 {
 	"name": "ds_source_file",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_source_blob_sa",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "OldSets"
 		},

@@ -1,10 +1,6 @@
 {
 	"name": "ds_src_file_git",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_git_hub",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "OldSets"
 		},

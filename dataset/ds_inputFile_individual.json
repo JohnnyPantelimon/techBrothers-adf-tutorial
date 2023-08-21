@@ -1,10 +1,6 @@
 {
 	"name": "ds_inputFile_individual",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_source_blob_sa",
-			"type": "LinkedServiceReference"
-		},
 		"parameters": {
 			"dsp_fileName": {
 				"type": "string"
