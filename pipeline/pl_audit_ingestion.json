@@ -261,6 +261,9 @@
 				"type": "Integer"
 			}
 		},
+		"folder": {
+			"name": "Copy Activity"
+		},
 		"annotations": []
 	}
 }

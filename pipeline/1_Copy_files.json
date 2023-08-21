@@ -53,8 +53,7 @@
 					"enableSkipIncompatibleRow": false,
 					"skipErrorFile": {
 						"fileMissing": true
-					},
-					"validateDataConsistency": false
+					}
 				},
 				"inputs": [
 					{
@@ -77,6 +76,9 @@
 			"windowEnd": {
 				"type": "String"
 			}
+		},
+		"folder": {
+			"name": "Copy Activity"
 		},
 		"annotations": []
 	}
