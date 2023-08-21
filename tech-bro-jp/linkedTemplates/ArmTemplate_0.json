@@ -137,6 +137,29 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_bid')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "lnk_blob_storage",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "{year}/{month}/{day}",
+						"container": "output"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/lnk_blob_storage')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DestinationDataset_m78')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -156,6 +179,28 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_source_blob_sa')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_bid')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "lnk_blob_storage",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "input"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/lnk_blob_storage')]"
 			]
 		},
 		{
@@ -548,109 +593,6 @@
 					"quoteChar": "\""
 				},
 				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ls_source_blob_sa')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ds_inval_json')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "lnk_blob_storage",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "invalid_IPL_data.json",
-						"container": "input"
-					}
-				},
-				"schema": {
-					"type": "object",
-					"properties": {
-						"Match ID": {
-							"type": "string"
-						},
-						"Date": {
-							"type": "string"
-						},
-						"Venue": {
-							"type": "string"
-						},
-						"Team1": {
-							"type": "string"
-						},
-						"Team2": {
-							"type": "string"
-						},
-						"Toss Winner": {
-							"type": "string"
-						},
-						"Toss Decision": {
-							"type": "string"
-						},
-						"Stage": {
-							"type": "string"
-						},
-						"First Innings Score": {
-							"type": "string"
-						},
-						"First Innings Wicket": {
-							"type": "string"
-						},
-						"Second Innings score": {
-							"type": "string"
-						},
-						"Second Innings Wicket": {
-							"type": "string"
-						},
-						"Match Winner": {
-							"type": "string"
-						},
-						"Won by": {
-							"type": "string"
-						},
-						"Margin": {
-							"type": "string"
-						},
-						"Player of the match": {
-							"type": "string"
-						}
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/lnk_blob_storage')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/ds_json_destionation')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "ls_source_blob_sa",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "OldSets"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "fifa_conv.json",
-						"container": "archive"
-					}
-				},
-				"schema": {}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_source_blob_sa')]"
