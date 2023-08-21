@@ -1,0 +1,88 @@
+{
+	"name": "ds_source_file1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnk_blob_storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ipl 2008.csv",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Match ID",
+				"type": "String"
+			},
+			{
+				"name": "Date",
+				"type": "String"
+			},
+			{
+				"name": "Venue",
+				"type": "String"
+			},
+			{
+				"name": "Team1",
+				"type": "String"
+			},
+			{
+				"name": "Team2",
+				"type": "String"
+			},
+			{
+				"name": "Toss winner",
+				"type": "String"
+			},
+			{
+				"name": "Toss decision",
+				"type": "String"
+			},
+			{
+				"name": "Stage",
+				"type": "String"
+			},
+			{
+				"name": "First innings score",
+				"type": "String"
+			},
+			{
+				"name": "First innings wicket",
+				"type": "String"
+			},
+			{
+				"name": "Second innings score",
+				"type": "String"
+			},
+			{
+				"name": "Second innings wicket",
+				"type": "String"
+			},
+			{
+				"name": "Match winner",
+				"type": "String"
+			},
+			{
+				"name": "Won by",
+				"type": "String"
+			},
+			{
+				"name": "Margin",
+				"type": "String"
+			},
+			{
+				"name": "Player of the match",
+				"type": "String"
+			}
+		]
+	}
+}
