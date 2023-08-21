@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "tech-bro-jp"
+		},
+		"lnk_blob_storage_connectionString": {
+			"value": ""
+		},
+		"ls_source_blob_sa_connectionString": {
+			"value": ""
+		},
+		"ls_sqldb_conn_connectionString": {
+			"value": ""
+		},
+		"ls_git_hub_properties_typeProperties_url": {
+			"value": "https://github.com/JohnnyPantelimon/techBrothers-adf-tutorial/blob/b623ba32724e8dcbda82232c0493465dfae3fc0b/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

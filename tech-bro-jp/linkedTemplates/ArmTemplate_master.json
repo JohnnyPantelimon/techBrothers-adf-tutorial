@@ -1,0 +1,90 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "tech-bro-jp"
+		},
+		"lnk_blob_storage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'lnk_blob_storage'"
+		},
+		"ls_source_blob_sa_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_source_blob_sa'"
+		},
+		"ls_sqldb_conn_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sqldb_conn'"
+		},
+		"ls_git_hub_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/JohnnyPantelimon/techBrothers-adf-tutorial/blob/b623ba32724e8dcbda82232c0493465dfae3fc0b/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "tech-bro-jp_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"lnk_blob_storage_connectionString": {
+						"value": "[parameters('lnk_blob_storage_connectionString')]"
+					},
+					"ls_source_blob_sa_connectionString": {
+						"value": "[parameters('ls_source_blob_sa_connectionString')]"
+					},
+					"ls_sqldb_conn_connectionString": {
+						"value": "[parameters('ls_sqldb_conn_connectionString')]"
+					},
+					"ls_git_hub_properties_typeProperties_url": {
+						"value": "[parameters('ls_git_hub_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "tech-bro-jp_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'tech-bro-jp_ArmTemplate_0')]"
+			]
+		}
+	]
+}
